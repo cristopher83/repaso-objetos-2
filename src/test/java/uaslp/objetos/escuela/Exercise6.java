@@ -2,6 +2,7 @@ package uaslp.objetos.escuela;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Exercise6 {
@@ -24,5 +25,38 @@ public class Exercise6 {
         assertThat(Dependencia1.class).isInterface();
         assertThat(Dependencia2.class).isInterface();
         assertThat(Dependencia3.class).isInterface();
+    }
+    @Test
+    public void verificaClaseAlgoritmoX(){
+        AlgoritmoX algoritmoX = new AlgoritmoX();
+        assertThat(algoritmoX).isInstanceOf(AlgoritmoX.class);
+    }
+
+    @Test
+    public void verificaMetodoSave(){
+        Dependencia dependencia1 = new Dependencia();
+        Dependencia dependencia2 = new Dependencia();
+        Dependencia dependencia3 = new Dependencia();
+        AlgoritmoX algoritmoX = new AlgoritmoX(dependencia1,dependencia2,dependencia3);
+        String valor = algoritmoX.algoritmoACubrir(2,2,"s");
+        Assertions.assertEquals(valor,"save");
+    }
+    @Test
+    public void verificaMetodoPrint(){
+        Dependencia dependencia1 = new Dependencia();
+        Dependencia dependencia2 = new Dependencia();
+        Dependencia dependencia3 = new Dependencia();
+        AlgoritmoX algoritmoX = new AlgoritmoX(dependencia1,dependencia2,dependencia3);
+        String valor = algoritmoX.algoritmoACubrir(1,2,"s");
+        Assertions.assertEquals(valor,"print");
+    }
+    @Test
+    public void verificaMetodoSend(){
+        Dependencia dependencia1 = new Dependencia();
+        Dependencia dependencia2 = new Dependencia();
+        Dependencia dependencia3 = new Dependencia();
+        AlgoritmoX algoritmoX = new AlgoritmoX(dependencia1,dependencia2,dependencia3);
+        String valor = algoritmoX.algoritmoACubrir(4,2,"s");
+        Assertions.assertEquals(valor,"send");
     }
 }
