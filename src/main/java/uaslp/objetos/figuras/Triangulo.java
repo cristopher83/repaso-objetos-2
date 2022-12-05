@@ -29,13 +29,14 @@ public class Triangulo extends Figura{
     public void setAltura(double altura){
         this.altura = altura;
     }
-    public double getArea() throws BaseNoProvistaException, AlturaNoProvistaException {
-        try {
-            return base * altura / 2;
-        } catch (BaseNoProvistaException ex) {
-            ex.printStackTrace();
-            return 0;
-        }
+    public double getArea() {
+      if(base == 0){
+          throw new BaseNoProvistaException();
+      }
+      if (altura == 0){
+          throw new AlturaNoProvistaException();
+      }
+      return base*altura/2;
     }
     public double getBase(){
         return base;

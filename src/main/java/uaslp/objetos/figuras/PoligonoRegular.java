@@ -8,6 +8,10 @@ public class PoligonoRegular extends Figura{
     //Constructor.
     public PoligonoRegular(int numeroDeLados){
         super("Poligono Regular");
+        DatoFaltanteException ex = new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        if(numeroDeLados < 5){ //Poligonos mayores a 5
+            throw ex;
+        }
         this.numeroDeLados = numeroDeLados;
     }
     public PoligonoRegular(int numeroDeLados,double lado){

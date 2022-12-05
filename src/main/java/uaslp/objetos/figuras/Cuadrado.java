@@ -20,13 +20,13 @@ public class Cuadrado extends Figura {
     public void setLado(double lado){
         this.lado=lado;
     }
-    public double getArea() throws LadoNoProvistoException{
-        try {
-            return (lado * lado);
-        } catch (LadoNoProvistoException ex) {
-            ex.printStackTrace();
+    public double getArea(){
+        double area = lado*lado;
+        if(lado == 0){
+            throw new LadoNoProvistoException();
         }
-        return 0;
+        return area;
+
     }
     public double getLado(){
         return this.lado;

@@ -4,4 +4,8 @@ public class DatoFaltanteException extends RuntimeException{
     public DatoFaltanteException(String msg){
         super(msg);
     }
+    public DatoFaltanteException(){
+
+    }
+
 }
